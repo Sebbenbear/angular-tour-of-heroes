@@ -10,6 +10,7 @@ import { HeroService } from './hero.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
 import {MatButtonModule } from '@angular/material';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {MatButtonModule } from '@angular/material';
   imports: [
     BrowserModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    AppRoutingModule
   ],
   providers: [
     HeroService,
