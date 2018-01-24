@@ -9,6 +9,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroService } from './hero.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
+import {MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,12 @@ import { MessageService } from './message.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule
   ],
   providers: [
     HeroService,
-    MessageService, 
-    //MessageService
+    MessageService
   ],
   bootstrap: [AppComponent]
 })
