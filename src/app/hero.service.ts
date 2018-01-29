@@ -8,15 +8,15 @@ import { Hero } from './hero';
 import { MessageService } from './message.service';
 
 import { catchError, map, tap } from 'rxjs/operators';
- 
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable()
 export class HeroService {
 
   private heroesUrl = 'api/heroes';
-
-  const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
  
   constructor(
     private http: HttpClient,
@@ -65,9 +65,18 @@ export class HeroService {
   }
 
   updateHero(hero: Hero): Observable<any> {
-    return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
+    return this.http.put(this.heroesUrl, hero, httpOptions).pipe(
         tap(_ => this.log(`updated hero id=${hero.id}`)),
         catchError(this.handleError<any>(`updateHero`))
     );
   } 
+
+  /** POST: add a new hero to the server */
+  addHero (hero: Hero): Observable<Hero> {
+    return this.http.post<Hero>(this.heroesUrl, hero, 
+      httpOptions).pipe(
+        tap((hero: Hero) => this.log(`added hero w/ id=${hero.id}`)),
+        catchError(this.handleError<Hero>('addHero'))
+    );
+  }
 }
