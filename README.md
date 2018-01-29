@@ -1,5 +1,13 @@
 # AngularTourOfHeroes
 
+
+If there's issues with `ng` not being found, add it to System environment variables on Windows.
+
+If the npm install hangs, try installing:
+
+`npm install -g yarn`
+`yarn install`
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
 ## Development server
