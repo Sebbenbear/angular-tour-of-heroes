@@ -9,12 +9,11 @@
   </div>
   -->
   <div class="example-container">
-    <mat-form-field>
+    <mat-form-field hintLabel="Max 10 characters">
       <input matInput placeholder="Name" #heroName color="warn">
     </mat-form-field>
     <button mat-raised-button (click)="add(heroName.value); heroName.value=''">Add</button>
   </div>
-
 
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
