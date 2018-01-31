@@ -14,6 +14,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 
 import { MatButtonModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
@@ -28,7 +29,8 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule
   ],
   declarations: [
     AppComponent,

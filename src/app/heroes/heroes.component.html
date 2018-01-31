@@ -1,11 +1,20 @@
 <h2>My Heroes</h2>
 
-<div>
-  <label>Hero name:
-    <input #heroName />
-  </label>
-  <button mat-raised-button (click)="add(heroName.value); heroName.value=''">Add</button>
-</div>
+
+  <!--
+  <div>
+    <label>Hero name:
+      <input #heroName />
+    </label>
+  </div>
+  -->
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Name" #heroName color="warn">
+    </mat-form-field>
+    <button mat-raised-button (click)="add(heroName.value); heroName.value=''">Add</button>
+  </div>
+
 
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
