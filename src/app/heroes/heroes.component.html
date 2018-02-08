@@ -1,11 +1,13 @@
 <h2>My Heroes</h2>
 
-  <div class="example-container">
-    <mat-form-field hintLabel="Max 10 characters">
-      <input matInput placeholder="Name" #heroName color="warn">
-    </mat-form-field>
-    <button mat-raised-button (click)="add(heroName.value); heroName.value=''">Add</button>
-  </div>
+<div class="example-container">
+  <mat-form-field hintLabel="Max 10 characters">
+    <input matInput placeholder="Name" #heroName color="warn">
+  </mat-form-field>
+  <button mat-raised-button (click)="add(heroName.value); heroName.value=''">Add</button>
+</div>
+
+<app-hero-table></app-hero-table>
 
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
@@ -17,4 +19,3 @@
 
   </li>
 </ul>
-<app-hero-table></app-hero-table>
