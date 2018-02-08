@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { DataSource } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-heroes',
@@ -11,7 +13,9 @@ import { HeroService } from '../hero.service';
 
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
-
+  displayedColumns = ['id', 'name'];
+  dataSource = new HeroDataSource(this.heroService);
+  
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
@@ -38,4 +42,14 @@ export class HeroesComponent implements OnInit {
     this.heroService.deleteHero(hero).subscribe();
   }
 
+}
+
+export class HeroDataSource extends DataSource<any> {
+  constructor(private heroService: HeroService) {
+    super();
+  }
+  connect(): Observable<Hero[]> {
+    return this.heroService.getHeroes();
+  }
+  disconnect() {}
 }
