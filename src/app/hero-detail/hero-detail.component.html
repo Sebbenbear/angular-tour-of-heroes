@@ -1,20 +1,31 @@
 <div *ngIf="hero">
+    <div>{{ hero.id }}</div>
     <h2>{{ hero.name | uppercase }} Details </h2>
-
-    <div><span>{{ hero.id }}</span></div>
-
-    <!--
-    <div><span>{{ hero.name }}</span></div>
-    <div><span>{{ hero.attack }}</span></div>
-    <div><span>{{ hero.defense }}</span></div>
-    <div><span>{{ hero.specialAttack }}</span></div>
-    <div><span>{{ hero.specialDefense }}</span></div>
-    <div><span>{{ hero.Speed }}</span></div> -->
 
     <!-- Bind the name property of the hero to the input tag. NgModel lets changes to the name and the textbox reflect each other.-->
     <form class="hero-form">
         <mat-form-field class="hero-full-width">
-            <input [(ngModel)]="hero.name" matInput placeholder="Name" value={{hero.name}} name="first">
+            <input [(ngModel)]="hero.name" matInput placeholder="Name" value={{hero.name}} name="name">
+        </mat-form-field>
+
+        <mat-form-field class="hero-full-width">
+            <input [(ngModel)]="hero.attack" matInput type="number" placeholder="Attack" value={{hero.attack}} name="attack">
+        </mat-form-field>
+
+        <mat-form-field class="hero-full-width">
+            <input [(ngModel)]="hero.defense" matInput type="number" placeholder="Defense" value={{hero.defense}} name="defense">
+        </mat-form-field>
+
+        <mat-form-field class="hero-full-width">
+            <input [(ngModel)]="hero.specialAttack" matInput type="number" placeholder="Special Attack" value={{hero.specialAttack}} name="specialAttack">
+        </mat-form-field>
+
+        <mat-form-field class="hero-full-width">
+            <input [(ngModel)]="hero.specialDefense" matInput type="number" placeholder="Special Defense" value={{hero.specialDefense}} name="specialDefense">
+        </mat-form-field>
+
+        <mat-form-field class="hero-full-width">
+            <input [(ngModel)]="hero.speed" matInput type="number" placeholder="Speed" value={{hero.speed}} name="speed">
         </mat-form-field>
     </form>
     
