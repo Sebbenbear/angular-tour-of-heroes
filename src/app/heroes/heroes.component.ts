@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
-import { DataSource } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-heroes',
@@ -13,8 +11,6 @@ import { DataSource } from '@angular/cdk/collections';
 
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
-  displayedColumns = ['id', 'name'];
-  dataSource = new HeroDataSource(this.heroService);
   
   constructor(private heroService: HeroService) { }
 
@@ -41,15 +37,4 @@ export class HeroesComponent implements OnInit {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero).subscribe();
   }
-
-}
-
-export class HeroDataSource extends DataSource<any> {
-  constructor(private heroService: HeroService) {
-    super();
-  }
-  connect(): Observable<Hero[]> {
-    return this.heroService.getHeroes();
-  }
-  disconnect() {}
 }
