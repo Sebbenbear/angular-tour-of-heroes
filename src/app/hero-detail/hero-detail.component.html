@@ -2,22 +2,22 @@
     <h2>{{ hero.name | uppercase }} Details </h2>
 
     <div><span>{{ hero.id }}</span></div>
+
+    <!--
     <div><span>{{ hero.name }}</span></div>
     <div><span>{{ hero.attack }}</span></div>
     <div><span>{{ hero.defense }}</span></div>
     <div><span>{{ hero.specialAttack }}</span></div>
     <div><span>{{ hero.specialDefense }}</span></div>
-    <div><span>{{ hero.Speed }}</span></div>
+    <div><span>{{ hero.Speed }}</span></div> -->
 
     <!-- Bind the name property of the hero to the input tag. NgModel lets changes to the name and the textbox reflect each other.-->
-    <div>
-        <label>Name
-            <input [(ngModel)]="hero.name" placeholder="name">
-        </label>
-    </div>
-    <!-- <mat-form-field>
-        <input matInput placeholder="Name" [(ngModel)]="hero.name">
-    </mat-form-field> -->
+    <form class="hero-form">
+        <mat-form-field class="hero-full-width">
+            <input [(ngModel)]="hero.name" matInput placeholder="Name" value={{hero.name}} name="first">
+        </mat-form-field>
+    </form>
+    
     <button mat-raised-button color="primary" (click)="goBack()">Go back</button>
     <button mat-raised-button color="primary" (click)="save()">Save</button>
 </div>
