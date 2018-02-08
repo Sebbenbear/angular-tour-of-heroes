@@ -1,11 +1,19 @@
 <h2>My Heroes</h2>
 
-<div class="example-container">
+<!--
+<div>
   <mat-form-field hintLabel="Max 10 characters">
     <input matInput placeholder="Name" #heroName color="warn">
   </mat-form-field>
   <button mat-raised-button (click)="add(heroName.value); heroName.value=''">Add</button>
 </div>
+-->
+
+<a routerLink="/dashboard">
+  <button mat-fab color="accent" class="md-fab md-fab-bottom-right">
+    <mat-icon aria-label="Add a hero">add</mat-icon>
+  </button>
+</a>
 
 <app-hero-table></app-hero-table>
 
@@ -16,6 +24,5 @@
     <a routerLink="/detail/{{hero.id}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>
-
   </li>
 </ul>
