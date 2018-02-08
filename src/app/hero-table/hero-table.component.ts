@@ -13,7 +13,7 @@ import { DataSource } from '@angular/cdk/collections';
 
 export class HeroTableComponent implements OnInit {
   heroes: Hero[];
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['id', 'name', 'attack', 'defense', 'specialAttack', 'specialDefense', 'speed'];
   dataSource = new HeroDataSource(this.heroService);
 
   constructor(private heroService: HeroService) { }

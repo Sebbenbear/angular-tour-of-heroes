@@ -10,6 +10,31 @@
     <mat-cell *matCellDef="let hero"> {{hero.name}} </mat-cell>
   </ng-container>
 
+  <ng-container matColumnDef="attack">
+    <mat-header-cell *matHeaderCellDef> Attack </mat-header-cell>
+    <mat-cell *matCellDef="let hero"> {{hero.attack}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="defense">
+    <mat-header-cell *matHeaderCellDef> Defense </mat-header-cell>
+    <mat-cell *matCellDef="let hero"> {{hero.defense}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="specialAttack">
+    <mat-header-cell *matHeaderCellDef> Special Attack </mat-header-cell>
+    <mat-cell *matCellDef="let hero"> {{hero.specialAttack}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="specialDefense">
+    <mat-header-cell *matHeaderCellDef> Special Defense </mat-header-cell>
+    <mat-cell *matCellDef="let hero"> {{hero.specialDefense}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="speed">
+    <mat-header-cell *matHeaderCellDef> Speed </mat-header-cell>
+    <mat-cell *matCellDef="let hero"> {{hero.speed}} </mat-cell>
+  </ng-container>
+
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 
