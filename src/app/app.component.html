@@ -1,5 +1,17 @@
-<mat-toolbar color='primary'>
+<mat-toolbar color="primary" role="header">
     <span>{{title}}</span>
+      <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+    <span>
+        <button mat-icon-button>
+            <mat-icon aria-label="Download csv of heroes">file_download</mat-icon>
+        </button>
+    </span>
+    <span>
+        <button mat-icon-button>
+            <mat-icon aria-label="hero options">more_vert</mat-icon>
+        </button>
+    </span>
 </mat-toolbar>
 <nav>
     <a routerLink="/dashboard">Dashboard</a>
