@@ -1,9 +1,21 @@
 <mat-toolbar color="primary" role="header">
-    <span>{{title}}</span>
+    <span class="main_title">{{title}}</span>
       <!-- This fills the remaining space of the current row -->
+
+    <span>
+        <a routerLink="/dashboard">
+            <button mat-button class="nav_button">Dashboard</button>
+        </a>
+    </span>
+    <span>
+        <a routerLink="/heroes">
+            <button mat-button class="nav_button">Heroes</button>
+        </a>
+    </span>
+
     <span class="example-fill-remaining-space"></span>
     <span>
-        <button mat-icon-button>
+        <button mat-icon-button color="primary" class="nav_button">
             <mat-icon aria-label="Download csv of heroes">file_download</mat-icon>
         </button>
     </span>
@@ -13,11 +25,8 @@
         </button>
     </span>
 </mat-toolbar>
+
 <div class="content">
-    <nav>
-        <a routerLink="/dashboard">Dashboard</a>
-        <a routerLink="/heroes">Heroes</a>
-    </nav>
     <router-outlet></router-outlet>
     <app-messages></app-messages>
 </div>

@@ -1,4 +1,14 @@
 /* AppComponent's private CSS styles */
+
+.nav_button {
+  color: #eee;
+}
+
+.main_title {
+  margin-right: 1em;
+}
+
+/*
 nav a {
   margin-left: 2em;
   padding: 5px 10px; 
@@ -21,6 +31,7 @@ nav a:hover {
 nav a.active {
   color: #039be5;
 }
+*/
 
 .example-fill-remaining-space {
   /* This fills the remaining space, by using flexbox. 
