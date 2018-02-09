@@ -1,14 +1,5 @@
 <h2>My Heroes</h2>
 
-<!--
-<div>
-  <mat-form-field hintLabel="Max 10 characters">
-    <input matInput placeholder="Name" #heroName color="warn">
-  </mat-form-field>
-  <button mat-raised-button (click)="add(heroName.value); heroName.value=''">Add</button>
-</div>
--->
-
 <a routerLink="/dashboard">
   <button mat-fab color="accent" class="md-fab md-fab-bottom-right">
     <mat-icon aria-label="Add a hero">add</mat-icon>
@@ -17,12 +8,25 @@
 
 <app-hero-table></app-hero-table>
 
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-      <button mat-icon-button mat-button color="warn" class="delete" title="delete hero" 
-      (click)="delete(hero)"><i class="material-icons">delete</i></button>
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </a>
-  </li>
-</ul>
+<mat-list>
+  <h3>My Heroes</h3>
+  <mat-list-item *ngFor="let hero of heroes">
+
+      <!-- Put an image for each hero -->
+
+      <button mat-icon-button mat-button color="warn" class="delete" title="delete hero" (click)="delete(hero)">
+        <mat-icon aria label="Delete a hero">delete</mat-icon>
+      </button>
+
+      <a routerLink="/detail/{{hero.id}}">
+        <button mat-icon-button mat-button color="primary">
+          <mat-icon aria label="Edit a hero">mode_edit</mat-icon>
+        </button>
+      </a>
+
+      {{hero.id}}. {{hero.name}}
+
+      <!-- <mat-divider></mat-divider> -->
+
+  </mat-list-item>
+</mat-list>
