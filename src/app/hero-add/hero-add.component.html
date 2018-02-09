@@ -1,0 +1,40 @@
+<h2> Add Hero </h2>
+<div>
+    <!-- Bind the name property of the hero to the input tag. NgModel lets changes to the name and the textbox reflect each other.-->
+    <form class="hero-form">
+        <mat-form-field class="hero-full-width">
+            <input #name matInput placeholder="Name" name="name">
+        </mat-form-field>
+
+        <mat-form-field class="hero-full-width">
+            <input #attack matInput type="number" placeholder="Attack" name="attack">
+        </mat-form-field>
+
+        <mat-form-field class="hero-full-width">
+            <input #defense matInput type="number" placeholder="Defense" name="defense">
+        </mat-form-field>
+
+        <mat-form-field class="hero-full-width">
+            <input #specialAttack matInput type="number" placeholder="Special Attack" name="specialAttack">
+        </mat-form-field>
+
+        <mat-form-field class="hero-full-width">
+            <input #specialDefense matInput type="number" placeholder="Special Defense" name="specialDefense">
+        </mat-form-field>
+
+        <mat-form-field class="hero-full-width">
+            <input #speed matInput type="number" placeholder="Speed" name="speed">
+        </mat-form-field>
+
+        <!--
+        <mat-form-field class="hero-full-width">
+            <input [(ngModel)]="hero.speed" matInput type="number" placeholder="Speed" value="Speed" name="speed">
+        </mat-form-field>
+        -->
+    </form>
+    
+    <button mat-raised-button color="primary" (click)="goBack()">Go back</button>
+    <button mat-raised-button color="primary" (click)="save(name.value, attack.value, 
+      defense.value, specialAttack.value, specialDefense.value, speed.value)">
+      Save</button>
+</div>

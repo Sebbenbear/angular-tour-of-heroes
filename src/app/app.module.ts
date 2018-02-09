@@ -27,6 +27,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroTableComponent } from './hero-table/hero-table.component';
+import { HeroAddComponent } from './hero-add/hero-add.component';
 
 @NgModule({
   imports: [
@@ -53,7 +54,8 @@ import { HeroTableComponent } from './hero-table/hero-table.component';
     HeroDetailComponent,
     MessagesComponent,
     HeroSearchComponent,
-    HeroTableComponent
+    HeroTableComponent,
+    HeroAddComponent
   ],
   providers: [
     HeroService,
